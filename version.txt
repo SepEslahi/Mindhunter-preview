@@ -1,0 +1,5 @@
+Mindhunter public test preview
+commit: 6fecada6e879ff51e4b05feb7ae63b162eb033bb
+branch: room-materials (PR #6)
+built: 2026-11-23T16:06:49Z
+Not the live website. Device and Iranian-network checks are outstanding.

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0b09">
+  <meta name="color-scheme" content="dark">
+  <title>دفتر کارآگاه | Mindhunter</title>
+  <meta name="description" content="دفتر سه‌بعدی کارآگاه؛ بازی‌های فیزیکی کارآگاهی و ترسناک.">
+  <script>
+    // Boot watchdog. Plain inline script so it runs even if the main module
+    // never downloads, fails to parse, or the browser lacks module support.
+    (function () {
+      var failed = false;
+      window.__mhBootFail = function (kind) {
+        if (failed || window.__mhBooted) return;
+        failed = true;
+        window.__mhBootFailKind = kind;
+        var show = function () {
+          var l = document.getElementById('loader'), e = document.getElementById('error');
+          if (!e) return setTimeout(show, 50);
+          if (l) l.hidden = true;
+          e.hidden = false;
+          document.getElementById('error-text').textContent = kind === 'slow'
+            ? 'بارگذاری دفتر بیشتر از معمول طول کشیده است. می‌توانید صبر کنید، دوباره تلاش کنید یا نسخهٔ ساده را ببینید.'
+            : 'برنامهٔ سه‌بعدی بارگذاری نشد. اتصال را بررسی کنید و دوباره تلاش کنید، یا نسخهٔ ساده را ببینید.';
+        };
+        show();
+      };
+      // a module script or its preload failed to download
+      window.addEventListener('error', function (ev) {
+        var t = ev.target;
+        if (t && t !== window && (t.tagName === 'SCRIPT' || (t.tagName === 'LINK' && /preload/.test(t.rel)))) window.__mhBootFail('script');
+      }, true);
+      // still nothing after a long wait: offer a way out (boot clears this if it recovers)
+      window.__mhSlowTimer = setTimeout(function () { if (!window.__mhStarted) window.__mhBootFail('slow'); }, 20000);
+    })();
+  </script>
+  <script nomodule>window.__mhBootFail('nomodule');</script>
+  <script type="module" crossorigin src="./assets/main-CJ-zgf_h.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/navigation-Dmry-bfq.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-b3xeu_SB.css">
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="fade" aria-hidden="true"></div>
+
+  <!-- Loading -->
+  <div id="loader" class="screen" role="status" aria-live="polite">
+    <div class="loader-box">
+      <div class="brand" lang="en" dir="ltr">MINDHUNTER</div>
+      <div class="bar" aria-hidden="true"><span id="loader-bar"></span></div>
+      <p id="loader-text">در حال آماده‌سازی دفتر…</p>
+      <a class="text-link" href="./simple.html">نسخهٔ ساده (بدون سه‌بعدی)</a>
+    </div>
+  </div>
+
+  <!-- Error / recovery -->
+  <div id="error" class="screen" hidden role="alert">
+    <div class="loader-box">
+      <div class="brand" lang="en" dir="ltr">MINDHUNTER</div>
+      <p id="error-text">مشکلی پیش آمد.</p>
+      <div class="row">
+        <button class="btn" id="error-retry" type="button" onclick="location.reload()">تلاش دوباره</button>
+        <a class="btn ghost" id="error-simple" href="./simple.html">نسخهٔ ساده</a>
+        <a class="btn ghost" id="error-low" href="./?low">کیفیت پایین</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen-reader announcements -->
+  <p id="sr-status" class="sr-only" role="status" aria-live="polite"></p>
+
+  <!-- Top navigation (RTL) -->
+  <header id="topbar" hidden>
+    <nav aria-label="منوی اصلی">
+      <span class="logo" lang="en" dir="ltr">MINDHUNTER</span>
+      <a class="chip" href="./simple.html">نسخهٔ ساده</a>
+      <button class="chip" id="btn-sound" type="button" aria-pressed="false">
+        <span class="ico" aria-hidden="true">♪</span><span class="lbl">صدا: خاموش</span>
+      </button>
+      <button class="chip" id="btn-settings" type="button" aria-haspopup="dialog" aria-controls="settings">تنظیمات</button>
+    </nav>
+  </header>
+
+  <!-- Settings dialog -->
+  <section id="settings" class="panel" hidden role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <h2 id="settings-title">تنظیمات</h2>
+    <label class="switch"><input type="checkbox" id="set-motion"><span>کاهش حرکت (بدون حرکت دوربین؛ جابه‌جایی با محو شدن)</span></label>
+    <label class="switch"><input type="checkbox" id="set-low"><span>کیفیت سه‌بعدی پایین (برای گوشی‌های ضعیف)</span></label>
+    <label class="switch"><input type="checkbox" id="set-sound"><span>صدا</span></label>
+    <p class="hint" id="set-note">تغییر کیفیت، صفحه را دوباره بارگذاری می‌کند.</p>
+    <details class="help">
+      <summary>راهنمای کنترل‌ها</summary>
+      <ul>
+        <li><b>گوشی:</b> برای نگاه کردن بکشید؛ برای رفتن، روی دایره‌های کف، اشیا یا دکمه‌های پایین صفحه بزنید.</li>
+        <li><b>رایانه:</b> با موس بکشید تا نگاه کنید؛ کلیک برای رفتن یا برداشتن. وقتی نمای سه‌بعدی انتخاب شده، کلیدهای W A S D یا جهت‌ها برای راه رفتن.</li>
+        <li><b>صفحه‌کلید:</b> با Tab بین دکمه‌ها بروید و با Enter انتخاب کنید. Esc پنجره یا پرونده را می‌بندد.</li>
+      </ul>
+    </details>
+    <button class="btn ghost" id="settings-close" type="button">بستن</button>
+  </section>
+
+  <!-- Entrance -->
+  <section id="entrance" hidden aria-label="ورودی">
+    <button class="btn big" id="btn-enter" type="button" disabled>وارد دفتر شوید</button>
+    <p class="sub">برای گشتن در دفتر بکشید و روی اشیا بزنید.</p>
+  </section>
+
+  <p id="hint" hidden></p>
+  <div id="labels" aria-hidden="true"></div>
+
+  <!-- Destinations and the contextual action (keyboard / screen reader / touch) -->
+  <nav id="places" hidden aria-label="جاهای دفتر">
+    <div class="row-places">
+      <button type="button" data-go="center">وسط اتاق</button>
+      <button type="button" data-go="cabinet">کمد پرونده‌ها</button>
+      <button type="button" data-go="desk">میز</button>
+      <button type="button" data-go="board">تختهٔ تحقیق</button>
+    </div>
+    <button type="button" id="btn-pick" class="btn action" hidden>برداشتن پرونده ۰۱</button>
+  </nav>
+
+  <!-- Folder inspection controls -->
+  <section id="inspect" hidden aria-label="پروندهٔ در دست">
+    <button class="close" id="insp-close" type="button">✕ بستن و برگرداندن</button>
+    <div class="dock">
+      <p class="hint-line" id="insp-hint">برای چرخاندن پرونده بکشید یا از دکمه‌های چرخش استفاده کنید.</p>
+      <div class="row rotate-row" role="group" aria-label="چرخاندن پرونده">
+        <button class="btn small" id="insp-rot-right" type="button" aria-label="چرخش به راست">↻ راست</button>
+        <button class="btn small" id="insp-rot-reset" type="button">بازنشانی</button>
+        <button class="btn small" id="insp-rot-left" type="button" aria-label="چرخش به چپ">چپ ↺</button>
+      </div>
+      <div class="row">
+        <button class="btn" id="insp-open" type="button" aria-pressed="false">باز کردن پرونده</button>
+        <button class="btn" id="insp-read" type="button" aria-haspopup="dialog" aria-controls="details">خواندن جزئیات</button>
+        <button class="btn ghost" id="insp-back" type="button">برگرداندن سر جایش</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case details dialog (content loaded on demand) -->
+  <aside id="details" hidden role="dialog" aria-modal="true" aria-labelledby="case-title" tabindex="-1">
+    <button class="close" id="details-close" type="button">✕ بستن</button>
+    <div id="details-body"></div>
+  </aside>
+
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><p class="nojs">برای دیدن دفتر سه‌بعدی، جاوااسکریپت را فعال کنید. <a href="./simple.html">نسخهٔ ساده</a></p></noscript>
+</body>
+</html>
