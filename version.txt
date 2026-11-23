@@ -1,5 +1,7 @@
 Mindhunter public test preview
-commit: 6fecada6e879ff51e4b05feb7ae63b162eb033bb
-branch: room-materials (PR #6)
-built: 2026-11-23T16:06:49Z
-Not the live website. Device and Iranian-network checks are outstanding.
+commit: 37454ad999d614374e0eaf5cc15d9d838032d7b1
+branch: phone-quality (based on room-materials, PR #6)
+built: 2026-11-23T20:30:38Z
+change: sharper rendering on phones (antialiasing always on, up to 2x resolution; slow data only shrinks the download)
+previous preview: 6fecada6e879ff51e4b05feb7ae63b162eb033bb
+Not the live website. Detailed device timings are outstanding.
