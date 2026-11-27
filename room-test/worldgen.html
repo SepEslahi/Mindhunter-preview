@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <title>آزمایش اتاق WorldGen | Mindhunter</title>
+  <meta name="description" content="پیش‌نمایش آزمایشی: اتاق دفتر کارآگاه ساخته‌شده با Hyper3D WorldGen، با نور پخته‌شده برای اجرای سبک در مرورگر.">
+  <script type="module" crossorigin src="./assets/worldgen-CxsAW_tE.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dfl-d-NM.js">
+  <link rel="modulepreload" crossorigin href="./assets/baked-room-DIob26Vs.js">
+  <link rel="stylesheet" crossorigin href="./assets/worldgen-BoIFD4hO.css">
+</head>
+<body>
+  <div id="stage" aria-hidden="true"></div>
+  <div id="fade" aria-hidden="true"></div>
+  <header class="bar">
+    <p class="tag"><strong>آزمایش اتاق WorldGen</strong> · سه‌بعدی <span lang="en" dir="ltr">(test preview, not live)</span></p>
+    <p class="stats" id="stats" aria-live="polite"></p>
+  </header>
+  <nav class="views" aria-label="نماها">
+    <button type="button" data-view="ref" aria-pressed="true">نمای مرجع</button>
+    <button type="button" data-view="desk">میز</button>
+    <button type="button" data-view="board">تختهٔ شواهد</button>
+    <button type="button" data-view="cabinet">کمد پرونده‌ها</button>
+    <button type="button" data-view="back">پشت اتاق</button>
+    <button type="button" id="tour" aria-pressed="false">گردش خودکار</button>
+    <button type="button" id="drawer" aria-pressed="false">باز کردن کشو</button>
+    <button type="button" id="compare" aria-pressed="false" hidden>بدون اصلاح نور</button>
+    <a id="mode" class="mode" href="?live">مقایسه: نور زنده (نسخهٔ ۱)</a>
+  </nav>
+  <div class="pad" role="group" aria-label="حرکت">
+    <button type="button" data-move="fwd" aria-label="جلو">▲</button>
+    <button type="button" data-move="left" aria-label="چرخش به چپ">◀</button>
+    <button type="button" data-move="right" aria-label="چرخش به راست">▶</button>
+    <button type="button" data-move="back" aria-label="عقب">▼</button>
+  </div>
+  <p class="hint" id="hint">برای نگاه کردن بکشید. با دکمه‌های جهت، کلیدهای جهت یا W A S D جابه‌جا شوید. برای باز کردن کشوی کمد روی آن بزنید.</p>
+  <p class="sr-only" id="say" aria-live="polite"></p>
+  <div class="loading" id="loading" role="status">
+    <p id="load-text">در حال بارگذاری صحنه… ۰٪</p>
+    <div class="meter"><span id="load-bar"></span></div>
+    <button type="button" id="retry" hidden>دوباره تلاش کنید</button>
+  </div>
+</body>
+</html>

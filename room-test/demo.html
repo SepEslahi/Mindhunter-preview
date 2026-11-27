@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>آزمایش کیفیت تصویر | Mindhunter</title>
+  <meta name="description" content="آزمایش کیفیت تصویر دفتر کارآگاه: میز، صندلی، تلفن و بخشی از تختهٔ شواهد، رندر زنده در مرورگر.">
+  <script type="module" crossorigin src="./assets/demo-D61HsnB-.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dfl-d-NM.js">
+  <link rel="modulepreload" crossorigin href="./assets/navigation-BtDa3v2V.js">
+  <link rel="stylesheet" crossorigin href="./assets/demo-BxUYH5Dj.css">
+</head>
+<body>
+  <div id="stage" aria-hidden="true"></div>
+  <header class="bar">
+    <p class="tag"><strong>خروجی واقعی مرورگر</strong> · سه‌بعدی و زنده، نه تصویر ثابت <span lang="en" dir="ltr">(live browser render)</span></p>
+    <p class="stats" id="stats" aria-live="polite"></p>
+  </header>
+  <nav class="views" aria-label="نماها">
+    <button type="button" data-view="ref" aria-pressed="true">نمای مرجع</button>
+    <button type="button" data-view="desk">میز</button>
+    <button type="button" data-view="phone">تلفن</button>
+    <button type="button" data-view="board">تختهٔ شواهد</button>
+    <a class="simple" href="./simple.html">نسخهٔ ساده</a>
+  </nav>
+  <p class="hint" id="hint">برای نگاه کردن بکشید. با کلیدهای جهت یا W A S D جابه‌جا شوید.</p>
+  <div class="loading" id="loading" role="status">
+    <p id="load-text">در حال بارگذاری صحنه… ۰٪</p>
+    <div class="meter"><span id="load-bar"></span></div>
+    <button type="button" id="retry" hidden>دوباره تلاش کنید</button>
+  </div>
+  <dialog id="info" aria-labelledby="info-title">
+    <h2 id="info-title"></h2>
+    <p id="info-body"></p>
+    <form method="dialog"><button type="submit">بستن</button></form>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Mindhunter test room (WorldGen office) - TEST BUILD, not the live website
+commit: b81d1302aae7eff3e8f23be8cf9d55dcd1180320
+branch: claude/project-thread-pljcyq (test room v16: investigation board rebuilt)
+built: 2026-11-27T02:22:13Z
